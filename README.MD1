@@ -1,0 +1,157 @@
+# Kubernetes YAML Files Repository
+
+## 📌 Overview
+This repository contains commonly used **Kubernetes YAML configuration files** for deploying, managing, and operating containerized applications in a Kubernetes cluster.
+
+These files cover core Kubernetes objects such as Pods, Deployments, Services, ConfigMaps, Secrets, Volumes, Jobs, CronJobs, StatefulSets, and Ingress.
+
+This repository is useful for:
+- Kubernetes learning and practice
+- Interview preparation
+- Real-time DevOps projects
+- Reference for YAML syntax and structure
+
+---
+
+## 📂 Repository Structure
+
+| File Name | Description |
+|---------|------------|
+| `pod.yaml` | Defines a single Pod to run a container |
+| `deployment.yaml` | Manages application replicas and rolling updates |
+| `service.yaml` | Exposes Pods internally or externally |
+| `configmap.yaml` | Stores non-sensitive configuration data |
+| `secrets.yaml` | Stores sensitive data like passwords and tokens |
+| `pv.yaml` | Defines Persistent Volume (storage resource) |
+| `pvc.yaml` | Requests storage from Persistent Volume |
+| `statefulset.yaml` | Manages stateful applications |
+| `job.yaml` | Runs a one-time batch job |
+| `cronjob.yaml` | Runs scheduled jobs |
+| `ingress.yaml` | Manages external HTTP/HTTPS access |
+
+---
+
+## 📄 YAML File Descriptions
+
+### 1️⃣ Pod (`pod.yaml`)
+- Smallest deployable unit in Kubernetes
+- Runs one or more containers
+- Used mainly for testing and learning
+
+---
+
+### 2️⃣ Deployment (`deployment.yaml`)
+- Manages multiple Pod replicas
+- Supports rolling updates and rollbacks
+- Commonly used for stateless applications
+
+---
+
+### 3️⃣ Service (`service.yaml`)
+- Provides stable network access to Pods
+- Types include:
+  - ClusterIP
+  - NodePort
+  - LoadBalancer
+
+---
+
+### 4️⃣ ConfigMap (`configmap.yaml`)
+- Stores configuration data (key-value pairs)
+- Used for environment variables or config files
+- Non-sensitive data only
+
+---
+
+### 5️⃣ Secret (`secrets.yaml`)
+- Stores sensitive information
+- Base64 encoded
+- Used for passwords, API keys, tokens
+
+---
+
+### 6️⃣ Persistent Volume (`pv.yaml`)
+- Represents physical storage
+- Provisioned by administrator
+- Independent of Pods lifecycle
+
+---
+
+### 7️⃣ Persistent Volume Claim (`pvc.yaml`)
+- Requests storage from PV
+- Used by Pods to attach storage
+
+---
+
+### 8️⃣ StatefulSet (`statefulset.yaml`)
+- Used for stateful applications (databases)
+- Provides stable network identity
+- Maintains persistent storage
+
+---
+
+### 9️⃣ Job (`job.yaml`)
+- Executes tasks once
+- Ensures completion
+- Example: database migration
+
+---
+
+### 🔟 CronJob (`cronjob.yaml`)
+- Runs Jobs on a schedule
+- Similar to Linux cron
+- Example: backups, cleanup tasks
+
+---
+
+### 1️⃣1️⃣ Ingress (`ingress.yaml`)
+- Manages external access to services
+- Works with Ingress Controller (NGINX, ALB)
+- Supports routing and TLS
+
+---
+
+## ▶️ How to Apply YAML Files
+
+Apply any file using:
+```bash
+kubectl apply -f <filename>.yaml
+
+
+HOW TO APPLY ALL
+kubectl apply -f pod.yaml
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f statefulset.yaml
+kubectl apply -f configmap.yaml
+kubectl apply -f secret.yaml
+kubectl apply -f pv.yaml
+kubectl apply -f pvc.yaml
+kubectl apply -f ingress.yaml
+kubectl apply -f job.yaml
+kubectl apply -f cronjob.yaml
+
+VERIFY RESOURCES
+kubectl get pods
+kubectl get services
+kubectl get deployments
+kubectl get pv
+kubectl get pvc
+
+🛠 Tools & Technologies Used
+
+Kubernetes
+
+kubectl
+
+YAML
+
+Docker
+
+Linux
+
+⭐ Notes
+
+These YAML files are for learning and practice
+
+Modify values like image name, ports, and storage as per your environment
